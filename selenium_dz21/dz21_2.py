@@ -25,12 +25,6 @@ def test1(browser):
     button_submit = chrome.find_element(By.ID, 'submit')
     button_submit.click()
     time.sleep(5)
-
-    summary_window = chrome.find_elements(By.CLASS_NAME, 'mb-1')
-    with open("out.txt", "w") as out:
-        for i in summary_window:
-            print(i, file=out)
-
     assert "Aleksey" == information.get('full_name')
     assert "adamkovich.leha@yandex.ru" == information.get('mail')
     assert "Belarus, Baranovichi, st. Sovetskaya, 20" == information.get('cur_address')

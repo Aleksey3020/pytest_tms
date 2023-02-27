@@ -29,3 +29,4 @@ def test1(browser):
     assert "adamkovich.leha@yandex.ru" == information.get('mail')
     assert "Belarus, Baranovichi, st. Sovetskaya, 20" == information.get('cur_address')
     assert "Belarus, Minsk, st. Lenina, 70" == information.get('perm_address')
+

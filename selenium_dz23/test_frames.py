@@ -10,10 +10,6 @@ def test1(browser):
     chrome.get(url=url)
     chrome.maximize_window()
 
-
-    paragraph = chrome.find_element(By.CSS_SELECTOR, '.tox-tbtn.tox-tbtn--select.tox-tbtn--bespoke>span')
-    paragraph.click()
-
     paragraph_t_locator = (By.CSS_SELECTOR, '.mce-content-body>p')
     iframe_locator = (By.CSS_SELECTOR, 'iframe[title="Rich Text Area"]')
 

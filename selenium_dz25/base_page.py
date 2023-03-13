@@ -5,7 +5,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from retrying import retry
 
 
-
 class BasePage:
     def __init__(self, driver: webdriver.Chrome):
         self.webdriver = driver

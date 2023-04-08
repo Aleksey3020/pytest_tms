@@ -1,6 +1,7 @@
+import allure
 from selenium.webdriver.common.by import By
 from selenium import webdriver
-from selenium_dz24.base_page import BasePage
+from allure_dz30.page.base_page import BasePage
 
 
 class CartPageLocators:
@@ -15,15 +16,16 @@ class UtomationpracticeCart(BasePage):
 
     # Проверяем является ли данная страница ожидаемой
 
+    @allure.step('Сhecking cart for expectation')
     def checking_cart_for_expectation(self):
         assert self.url == self.webdriver.current_url
 
     # Проверяем, что корзина пуста
-
+    @allure.step('Cart fullness')
     def cart_is_empty(self):
         assert self.find_element(CartPageLocators.locator_cart_is_empty).text == 'Your shopping cart is empty.'
 
     # Возвращаемся на главную страницу
-
+    @allure.step('Exit_to_main_page')
     def exit_to_main_page(self):
         self.click_element(CartPageLocators.locator_exit)

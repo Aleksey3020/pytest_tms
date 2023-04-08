@@ -1,7 +1,8 @@
 from selenium.webdriver.common.by import By
 from selenium import webdriver
-from selenium_dz24.base_page import BasePage
+from allure_dz30.page.base_page import BasePage
 import allure
+
 
 class MainPageLocators:
     visible_element_main_page = (By.CSS_SELECTOR, '[id = "slider_row"]')
@@ -12,7 +13,6 @@ class MainPageLocators:
 
 
 class UtomationpracticeMain(BasePage):
-    #@allure.step('input URL')
     def __init__(self, driver: webdriver.Chrome):
         super().__init__(driver)
         self.url = 'http://automationpractice.pl/index.php'
@@ -23,12 +23,12 @@ class UtomationpracticeMain(BasePage):
         assert self.find_element(MainPageLocators.visible_element_main_page).is_displayed()
 
     # Кликаем на кнопку cart(корзина) и переходим в cart
-    #@allure.step('Сlick cart button')
+    @allure.step('Сlick cart button')
     def clicking_the_shopping_cart_button(self):
         self.click_element(MainPageLocators.button_cart)
 
     # Кликаем на кнопку sign in(логина) и переходим в sign in
-    #@allure.step('Сlick sign in button')
+    @allure.step('Сlick sign in button')
     def clicking_the_shopping_sign_in_button(self):
         self.click_element(MainPageLocators.button_cart_sign_in)
 
